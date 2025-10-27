@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Algorithms, Part I.iml" filepath="$PROJECT_DIR$/Algorithms, Part I.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 2 - UnionFind(extra)/Module 2 - UnionFind(extra).iml" filepath="$PROJECT_DIR$/Module 2 - UnionFind(extra)/Module 2 - UnionFind(extra).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 5 - ElementarySort(extra)/Module 5 - ElementarySort(extra).iml" filepath="$PROJECT_DIR$/Module 5 - ElementarySort(extra)/Module 5 - ElementarySort(extra).iml" />
     </modules>
   </component>
 </project>

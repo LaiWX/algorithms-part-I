@@ -4,7 +4,7 @@
     <checkstyleVersion>10.12.7</checkstyleVersion>
     <scanScope>JavaOnly</scanScope>
     <option name="thirdPartyClasspath">
-      <option value="C:\Users\lwx12\IdeaProjects\Algorithms I\.lift\checkstyle-lift.jar" />
+      <option value="S:\IdeaProjects\Algorithms-Part-I\.lift\checkstyle-lift.jar" />
     </option>
     <option name="activeLocationIds">
       <option value="614e497c-47fe-438b-89b9-9816540a4bc8" />
