@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Module 1 - HelloWorld" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Module 2 - Percolation" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Module 4 - StacksAndQueues" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Module 6 - Collinear" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/.lift" />
       <excludePattern pattern="*.class" />
