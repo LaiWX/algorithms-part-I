@@ -59,7 +59,36 @@ public class Point implements Comparable<Point> {
      * @return the slope between this point and the specified point
      */
     public double slopeTo(Point that) {
-        /* YOUR CODE HERE */
+        int x0 = this.x;
+        int y0 = this.y;
+        int x1 = that.x;
+        int y1 = that.y;
+        if (x0 == x1 && y0 == y1) {
+            return Double.NEGATIVE_INFINITY;
+        }
+        if (x0 == x1) {
+            return Double.POSITIVE_INFINITY;
+        }
+        if (y0 == y1) {
+            return 0.0;
+        }
+        return 1.0 * (y1 - y0) / (x1 - x0);
+    }
+
+    /**
+     * Compares two points by the slope they make with this point.
+     * The slope is defined as in the slopeTo() method.
+     *
+     * @return the Comparator that defines this ordering on points
+     */
+    public Comparator<Point> slopeOrder() {
+        return new Comparator<Point>() {
+            public int compare(Point o1, Point o2) {
+                double slope1 = Point.this.slopeTo(o1);
+                double slope2 = Point.this.slopeTo(o2);
+                return Double.compare(slope1, slope2);
+            }
+        };
     }
 
     /**
@@ -75,17 +104,20 @@ public class Point implements Comparable<Point> {
      *         argument point
      */
     public int compareTo(Point that) {
-        /* YOUR CODE HERE */
-    }
-
-    /**
-     * Compares two points by the slope they make with this point.
-     * The slope is defined as in the slopeTo() method.
-     *
-     * @return the Comparator that defines this ordering on points
-     */
-    public Comparator<Point> slopeOrder() {
-        /* YOUR CODE HERE */
+        int x0 = this.x;
+        int y0 = this.y;
+        int x1 = that.x;
+        int y1 = that.y;
+        if (y0 == y1 && x0 == x1) {
+            return 0;
+        }
+        if (y0 < y1) {
+            return -1;
+        } else if (y0 == y1 && x0 < x1) {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 
 
@@ -105,6 +137,8 @@ public class Point implements Comparable<Point> {
      * Unit tests the Point data type.
      */
     public static void main(String[] args) {
-        /* YOUR CODE HERE */
+        Point o1 = new Point(1, 2);
+        Point o2 = new Point(1, 2);
+        System.out.println(o1.equals(o2));
     }
 }
