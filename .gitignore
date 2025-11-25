@@ -1,3 +1,6 @@
+### IDE ###
+.idea/checkstyle-idea.xml
+
 ### Homework ###
 *.zip
 
