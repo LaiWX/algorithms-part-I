@@ -6,5 +6,4 @@ interface STIF<Key, Value> {
     boolean isEmpty();
     int size();
     Iterable<Key> keys();
-    int rank(Key key);
 }
