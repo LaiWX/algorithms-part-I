@@ -135,28 +135,91 @@ public class BST<Key extends Comparable<Key>, Value> implements STIF<Key, Value>
     }
 
     public int rank(Key key) {
-        // todo
-        return 0;
+        if (key == null) throw new IllegalArgumentException();
+
+        return rankCnt(root, key);
+    }
+
+    private int rankCnt(Node node, Key key) {
+        if (node == null) return 0;
+
+        int cmp = key.compareTo(node.key);
+
+        if (cmp == 0) return size(node.left);
+        else if (cmp < 0) return ;
+        else {
+
+        }
     }
 
     public Key max() {
-        // todo
-        return null;
+        if (root == null) return null;
+
+        Node currNode = root;
+        while (currNode.right != null) {
+            currNode = currNode.right;
+        }
+
+        return currNode.key;
     }
 
     public Key min() {
-        // todo
-        return null;
+        if (root == null) return null;
+
+        Node currNode = root;
+        while (currNode.left != null) {
+            currNode = currNode.left;
+        }
+
+        return currNode.key;
     }
 
     public Key floor(Key key) {
-        // todo
-        return null;
+        if (key == null) throw new IllegalArgumentException();
+
+        Node floor = floor(root, key);
+
+        if (floor == null) return null;
+        else return floor.key;
+    }
+
+    private Node floor(Node node, Key key) {
+        if (node == null) return null;
+
+        int cmp = key.compareTo(node.key);
+
+        if (cmp == 0) {
+            return node;
+        } else if (cmp < 0) {
+            return floor(node.left, key);
+        } else {
+            Node rightFloor = floor(node.right, key);
+            if (rightFloor == null) return node;
+            else return rightFloor;
+        }
     }
 
     public Key ceiling(Key key) {
-        // todo
-        return null;
+        if (key == null) throw new IllegalArgumentException();
+
+        Node ceiling = ceiling(root, key);
+
+        if (ceiling == null) return null;
+        else return ceiling.key;
+    }
+
+    private Node ceiling(Node node, Key key) {
+        if (node == null) return null;
+
+        int cmp = key.compareTo(node.key);
+
+        if (cmp == 0) return node;
+        else if (cmp > 0) return ceiling(node.right, key);
+        else {
+            Node leftCeiling = ceiling(node.left, key);
+            if (leftCeiling == null) return node;
+            else return leftCeiling;
+        }
     }
 
     public Iterable<Key> keys() {
